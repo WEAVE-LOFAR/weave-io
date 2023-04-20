@@ -57,7 +57,7 @@ def reduce(function, sequence: List, initial=None):
     if not len(sequence):
         return initial
     if initial is None and len(sequence) == 1:
-        return sequence[0]
+        return next(iter(sequence))
     if any(isinstance(s, AttributeQuery) for s in sequence):
         if initial is None:
             initial = sequence[0]
